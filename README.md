@@ -1,27 +1,27 @@
 # DevHuntBot 🤖
 
 ## Description
-My first big project, crafted during the Mate Academy in just 4 days, is a Telegram bot named "DevHuntBot." 🚀 This innovative bot offers valuable insights into job vacancies categorized by experience level (junior, middle, and senior). Users can seamlessly select their preferred job level and access detailed vacancy information, including title, company, description, salary, and a link to the job posting. The bot harnesses the power of the Telegram Bot API and the Spring Framework to gracefully handle user interactions and dispatch messages with inline keyboard options. Notably, it incorporates robust error handling for exceptions related to message delivery. 🛠️
+My first big project, crafted during the Mate Academy in just 4 days, is a Telegram bot named "DevHuntBot." 🚀 This innovative bot offers valuable insights into job vacancies categorized by experience level (junior, middle, and senior). Users can seamlessly select their preferred job level and access detailed vacancy information, including title, company, description, salary, and a link to the job posting. The bot harnesses the power of the Telegram Bot API and the Spring Framework to gracefully handle user interactions and dispatch messages with inline keyboard options. 🛠️
 
 ## Project Structure
 
-### 1. `com.example.telegrambot.dto.VacancyDto`
+### 1. `VacancyDto`
    - Data Transfer Object (DTO) capturing the essence of a job vacancy.
    - Features fields for id, title, short description, long description, company, salary, and link. 📋
 
-### 2. `com.example.telegrambot.service.VacancyReaderService`
+### 2. `VacancyReaderService`
    - Service dedicated to reading job vacancies from a CSV file (`vacancies.csv`).
    - Leverages the OpenCSV library to adeptly parse CSV data into `VacancyDto` objects. 📄
 
-### 3. `com.example.telegrambot.service.VacancyService`
+### 3. `VacancyService`
    - Service orchestrating job vacancy management.
    - Gathers vacancies from the CSV file during application startup, categorizing them into junior, middle, and senior levels.
    - Equipped with methods to retrieve vacancies based on experience level and obtain detailed information about a specific vacancy. 🧑‍💻
 
-### 4. `com.example.telegrambot.BotRegister`
+### 4. `BotRegister`
    - Component responsible for seamlessly registering the `DevHuntBot` with the Telegram Bot API upon application startup. 🚀
 
-### 5. `com.example.telegrambot.DevHuntBot`
+### 5. `DevHuntBot`
    - Principal Telegram bot class extending `TelegramLongPollingBot`.
    - Proficiently handles user interactions, processes commands, and delivers messages with inline keyboard options.
    - Makes effective use of the `VacancyService` to retrieve and present job vacancies. 📬
